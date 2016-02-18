@@ -22,7 +22,7 @@ public class Asteroid : MonoBehaviour
 		while (true)
 		{
 			transform.Rotate(rotationDirection, 5);
-			yield return new WaitForSeconds(0.05f);
+			yield return new WaitForSeconds(0.01f);
 		}
 	}
 

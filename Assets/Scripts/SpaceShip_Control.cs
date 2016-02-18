@@ -24,7 +24,7 @@ public class SpaceShip_Control : MonoBehaviour
 	void Awake()
 	{
 		_BulletManager = GetComponent<Bullet_Manager>();
-		m_LineRenderer = GetComponent<LineRenderer>();
+		m_LineRenderer = GetComponentInChildren<LineRenderer>();
 		m_Rigidbody = GetComponent<Rigidbody>();
 	}
 
@@ -68,6 +68,7 @@ public class SpaceShip_Control : MonoBehaviour
 		else
 		{
 			m_Rigidbody.angularVelocity = Vector3.zero;
+			
 		}
 	}
 
@@ -75,7 +76,9 @@ public class SpaceShip_Control : MonoBehaviour
 	{
 		if (transform.position.x > xBounds)
 		{
+			Debug.Log("Working");
 			transform.position = new Vector3(-xBounds, transform.position.y, transform.position.z);
+			//m_LineRenderer.enabled = true;
 		}
 		else if (transform.position.x < -xBounds)
 		{
