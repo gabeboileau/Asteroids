@@ -23,6 +23,8 @@ public class Asteroid : MonoBehaviour
 
     public Type asteroidType;
 
+    public AudioClip explosionSound;
+
     private int m_CurrentHealth;
 
     private const int MAX_HEALTH_SMALL = 10;
@@ -79,6 +81,8 @@ public class Asteroid : MonoBehaviour
 
     public void TakeDamage(int aAmountOfDamage)
     {
+        m_AudioSource.PlayOneShot(explosionSound);
+
         m_CurrentHealth -= aAmountOfDamage;
         //Debug.Log(m_CurrentHealth);
         if (m_CurrentHealth <= 0)
