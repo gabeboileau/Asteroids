@@ -6,7 +6,7 @@ public class Bullet_Manager : MonoBehaviour
 {
 	public Text ammoText;
 
-	private const int MIN_AMMO = 100;
+	private const int MIN_AMMO = 50;
 	private int m_CurrentAmmo;
     private SpaceShip_SoundControl m_SoundControl;
 

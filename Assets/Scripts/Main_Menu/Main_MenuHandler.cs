@@ -2,11 +2,13 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class Main_MenuHandler : MonoBehaviour
 {
 
     public AudioMixer mainMixer;
+    public GameObject howToImage;
 
     public AudioClip pointerOverSound;
     public AudioClip selectSound;
@@ -28,7 +30,14 @@ public class Main_MenuHandler : MonoBehaviour
 
     public void HowToButtonPressed()
     {
+        howToImage.SetActive(true);
         ButtonPressedSound();
+    }
+
+    public void BackButtonPressed()
+    {
+        //Back Button pressed/ go back to main menu
+        howToImage.SetActive(false);
     }
 
     public void CreditsButtonPressed()

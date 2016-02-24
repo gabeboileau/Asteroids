@@ -19,6 +19,7 @@ public class Ammo_Pickup : MonoBehaviour
         if (aCollider.GetComponent<Bullet_Manager>() != null)
         {
             aCollider.GetComponent<Bullet_Manager>().AddAmmo(amountOfAmmo);
+            AmmoLevel.RemoveAmmoPickup();
             Destroy(gameObject);
         }
     }

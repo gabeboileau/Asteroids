@@ -143,6 +143,15 @@ public class SpaceShip_Control : MonoBehaviour
 		}
 		else
 		{
+            if(AmmoLevel.GetAmmoPickupCount() > 0)
+            {
+
+            }
+            else
+            {
+                Game_Manager.GameOver();
+            }
+
 			ShowAmmoWarning(); 
 		}
 	}

@@ -23,8 +23,6 @@ public class Asteroid : MonoBehaviour
 
     public Type asteroidType;
 
-    public AudioClip explosionSound;
-
     private int m_CurrentHealth;
 
     private const int MAX_HEALTH_SMALL = 10;
@@ -81,8 +79,6 @@ public class Asteroid : MonoBehaviour
 
     public void TakeDamage(int aAmountOfDamage)
     {
-        m_AudioSource.PlayOneShot(explosionSound);
-
         m_CurrentHealth -= aAmountOfDamage;
         //Debug.Log(m_CurrentHealth);
         if (m_CurrentHealth <= 0)
@@ -135,6 +131,7 @@ public class Asteroid : MonoBehaviour
                 {
                     GameObject ammo = Instantiate(ammoPickup, transform.position, Quaternion.identity) as GameObject;
                     ammo.transform.Rotate(new Vector3(270, 0, 0));
+                    AmmoLevel.AddAmmoPickup();
                 }
                 _AsteroidSpawner.RemoveAsteroid(gameObject);
                 Score_Manager.AddScore(scoreOfSmall);
